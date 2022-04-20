@@ -1,0 +1,31 @@
+.row{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    padding: 5px 0;
+    text-align: left;
+}
+.sn{
+    width: 10%;
+}
+.exchange{
+    width: 20%;
+}
+.symbol{
+    width: 40%;
+}
+.price{
+    width: 25%;
+}
+.buttons{
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: space-around;
+}
+.btns{
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
