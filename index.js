@@ -24,7 +24,7 @@ async function main(){
 
           //fetch binance data
           let binance = await fetch(proxy).catch(err=>{
-            table.innerHTML = "connection error: try refreshing page"
+            table.innerText = "connection error: try refreshing page"
           })
           let binancedata = await binance.json()
           let bindata = []
@@ -41,7 +41,7 @@ async function main(){
 
         //fetch kucoin data
     let kucoin = await fetch(proxy+"/kucoin").catch(err=>{
-        table.innerHTML = "connection error: try refreshing page"
+        table.innerText = "connection error: try refreshing page"
     })
     let kucoindata = await kucoin.json()
     let kudata = []
@@ -57,7 +57,7 @@ async function main(){
 
          //fetch gateio data
     let gateio = await fetch(proxy+"/gateio").catch(err=>{
-        table.innerHTML = "connection error: try refreshing page"
+        table.innerText = "connection error: try refreshing page"
         return
     })
     let gateiodata = await gateio.json()
@@ -73,7 +73,7 @@ async function main(){
 
     //fetch bybit data
     let bybit = await fetch(proxy+"/bybit").catch((err)=>{
-            table.innerHTML = "connection error: try refreshing page"
+            table.innerText = "connection error: try refreshing page"
         
     })
     let bybitdata = await bybit.json()
@@ -204,10 +204,11 @@ async function main(){
 
     prev.addEventListener("click", ()=>{
         if(startindex > 0){
+            
+            table.innerText = "loading previous page"
+
             startindex -= 500
             numperpage -= 500
-
-            table.innerHTML = "loading previous page"
 
             console.log(startindex, numperpage)
             renderPage(usable, startindex, numperpage)
@@ -216,10 +217,10 @@ async function main(){
 
     next.addEventListener("click", ()=>{
         if(startindex < usable.length){
+            table.innerText = "loading next page"
+
             startindex += 500
             numperpage += 500
-
-            table.innerHTML = "loading next page"
 
             console.log(startindex, numperpage)
             renderPage(usable, startindex, numperpage)
